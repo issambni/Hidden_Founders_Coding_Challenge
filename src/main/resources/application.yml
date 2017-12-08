@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: Shops_Project_Coding_Challenge
+  data:
+      mongodb:
+        host: 127.0.0.1
+        port: 27017
+        database: shop
+        repositories:
+          enabled: true
