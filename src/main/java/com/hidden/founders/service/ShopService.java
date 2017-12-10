@@ -118,7 +118,7 @@ import com.hidden.founders.repository.IShopRepository;
 		 */
 		@Override
 		public List<Shop> findNearByShopsByUserId(Point point,String idUser) {
-			DateTime dateTime = new DateTime().minusMinutes(2);
+			DateTime dateTime = new DateTime().minusHours(2);
 			return shopRepository.findNearByShops(point,idUser, dateTime.toDate());
 		}
 		
@@ -145,7 +145,7 @@ import com.hidden.founders.repository.IShopRepository;
 		 */
 		@Override
 		public List<Shop> findInValidDislikedShopByUserIds(String idUser) {
-			DateTime dateTime = new DateTime().minusMinutes(2);
+			DateTime dateTime = new DateTime().minusHours(2);
 			return shopRepository.findInValidDislikedShopByUserIds(idUser, dateTime.toDate());
 		}
 		
