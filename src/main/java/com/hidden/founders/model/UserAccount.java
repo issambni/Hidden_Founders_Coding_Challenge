@@ -5,15 +5,15 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection="users")
-public class User {
+public class UserAccount {
 	@Id
 	private String id;
 	private String email;
 	private String password;
-	public User() {
+	public UserAccount() {
 		super();
 	}
-	public User(String id, String email, String password) {
+	public UserAccount(String id, String email, String password) {
 		super();
 		this.id = id;
 		this.email = email;

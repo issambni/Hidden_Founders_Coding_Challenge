@@ -12,7 +12,6 @@ public class UserDislike {
 	}
 	public UserDislike() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public String getId() {
 		return id;

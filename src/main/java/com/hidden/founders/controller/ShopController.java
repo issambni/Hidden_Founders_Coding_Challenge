@@ -23,20 +23,20 @@ public class ShopController {
 	public ResponseEntity<List<Shop>> list() {
 		return ResponseEntity.ok(shopService.findAll());
 	}
-	
+			
 	@RequestMapping(value = "/shops/{id}" , method = RequestMethod.GET)
 	public ResponseEntity<Shop> showShop(@PathVariable String id) {
 		return ResponseEntity.ok(shopService.getOneById(id));
 	}
 	
 	@RequestMapping(value = "/shops/{id}/likes" , method = RequestMethod.GET)
-	public ResponseEntity<List<String>> getprefferedByUserIds(@PathVariable String id) {
-		return ResponseEntity.ok(shopService.getprefferedByUserIds(id));
+	public ResponseEntity<List<String>> getPrefferedByUserIds(@PathVariable String id) {
+		return ResponseEntity.ok(shopService.getPreferredByUserIds(id));
 	}
 	
 	@RequestMapping(value = "/shops/{id}/dislikes" , method = RequestMethod.GET)
-	public ResponseEntity<List<UserDislike>> getdislikedByUserIds(@PathVariable String id) {
-		return ResponseEntity.ok(shopService.getdislikedByUserIds(id));
+	public ResponseEntity<List<UserDislike>> getDislikedByUserIds(@PathVariable String id) {
+		return ResponseEntity.ok(shopService.getDislikedByUserIds(id));
 	}
 	
 

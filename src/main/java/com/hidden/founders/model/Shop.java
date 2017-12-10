@@ -15,15 +15,15 @@ public class Shop {
 	private String email;
 	private String city;
 	private Location location;
-	private List<String> prefferedByUserIds;
+	private List<String> preferredByUserIds;
 	private List<UserDislike> dislikedByUserIds;
 	
 	public Shop() {
 		super();
-		this.prefferedByUserIds=new ArrayList<String>();
+		this.preferredByUserIds=new ArrayList<String>();
 		this.dislikedByUserIds=new ArrayList<UserDislike>();
 	}
-	public Shop(String id, String picture, String name, String email, String city, Location location, List<String> prefferedByUserIds, List<UserDislike>dislikedByUserIds) {
+	public Shop(String id, String picture, String name, String email, String city, Location location, List<String> preferredByUserIds, List<UserDislike>dislikedByUserIds) {
 		super();
 		this.id = id;
 		this.picture = picture;
@@ -31,7 +31,7 @@ public class Shop {
 		this.email = email;
 		this.city = city;
 		this.location = location;
-		this.prefferedByUserIds=prefferedByUserIds;
+		this.preferredByUserIds=preferredByUserIds;
 		this.dislikedByUserIds=dislikedByUserIds;
 	}
 	public String getId() {
@@ -70,11 +70,11 @@ public class Shop {
 	public void setLocation(Location location) {
 		this.location = location;
 	}
-	public List<String> getPrefferedByUserIds() {
-		return prefferedByUserIds;
+	public List<String> getPreferredByUserIds() {
+		return preferredByUserIds;
 	}
 	public void setPrefferedByUserIds(List<String> prefferedByUserIds) {
-		this.prefferedByUserIds = prefferedByUserIds;
+		this.preferredByUserIds = prefferedByUserIds;
 	}
 	public List<UserDislike> getDislikedByUserIds() {
 		return dislikedByUserIds;
@@ -85,7 +85,7 @@ public class Shop {
 	@Override
 	public String toString() {
 		return "Shop [id=" + id + ", picture=" + picture + ", name=" + name + ", email=" + email + ", city=" + city
-				+ ", location=" + location + ", prefferedByUserIds=" + prefferedByUserIds + ", dislikedByUserIds="
+				+ ", location=" + location + ", prefferedByUserIds=" + preferredByUserIds + ", dislikedByUserIds="
 				+ dislikedByUserIds + "]";
 	}
 	

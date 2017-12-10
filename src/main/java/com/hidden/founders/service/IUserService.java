@@ -2,14 +2,14 @@ package com.hidden.founders.service;
 
 import java.util.List;
 
-import com.hidden.founders.model.User;
+import com.hidden.founders.model.UserAccount;
 
 public interface IUserService {
 	
-	List<User> findAll();
+	List<UserAccount> findAll();
 	
-	User getOneById(String userId);
+	UserAccount getOneById(String userId);
 	
-	User createUser(User user);
+	UserAccount createUser(UserAccount user);
 
 }

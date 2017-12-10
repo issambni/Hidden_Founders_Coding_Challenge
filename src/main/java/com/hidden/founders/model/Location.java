@@ -9,7 +9,6 @@ public class Location {
 	
 	public Location() {
 		super();
-		// TODO Auto-generated constructor stub
 		this.coordinates=new ArrayList<Double>();
 	}
 

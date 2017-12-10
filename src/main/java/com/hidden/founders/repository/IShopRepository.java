@@ -11,12 +11,33 @@ import com.hidden.founders.model.Shop;
 
 public interface IShopRepository extends MongoRepository<Shop,String>{
 	
-	List<Shop> findByPrefferedByUserIds(String id);
+	/**
+	 * This method finds preferred shops by user's id.
+	 * @param idUser: user's id
+	 * @return List of shops
+	 */
 	
-	@Query("{location:{$nearSphere :?0},'prefferedByUserIds' : {$ne : ?1},'$or': [{'dislikedByUserIds.id': {$ne: ?1}},{'dislikedByUserIds.dislikedAt' : {$lt : ?2}, 'dislikedByUserIds.id': ?1}]}")
-	List<Shop> findByPrefferedByUserIdsNot(Point a,String id, Date date); // date is the difference between current date and two hours ago
+	List<Shop> findByPreferredByUserIds(String idUser);
+	/**
+	 * This method returns nearby shops, that are not preferred by the user 
+	 * having a difference time between the now and last disliked time exceeds two hours.
+	 * It also sorts the results by position.
+	 * @param a: Point, representing user's position
+	 * @param idUser: user's id
+	 * @param date: Date, difference between current date and two hours ago
+	 * @return List of shops.
+	 */
+	@Query("{location:{$nearSphere :?0},'prefferedByUserIds' : {$ne : ?1},dislikedByUserIds:{$not:{$elemMatch:{dislikedAt : {$gt : ?2}, id: ?1}}}}")
+	List<Shop> findNearByShops(Point a, String idUser, Date date); // date is the difference between current date and two hours ago
 
-	//@Query("{'location':{'$near' : [?0,?1]}}")
+	/**
+	 * This method sorts shops regardless of their like status by a user.
+	 * @param a: Point, representing user's position
+	 * @return List of shops
+	 */
 	@Query("{ location:{$nearSphere :?0}}")
 	List<Shop> sortByDistance(Point a ); 
+	
+	@Query("{dislikedByUserIds:{$elemMatch: {dislikedAt : {$lt : ?1}, id: ?0} } }")
+	List<Shop> findInValidDislikedShopByUserIds(String idUser, Date date); // date is the difference between current date and two hours ago
 }

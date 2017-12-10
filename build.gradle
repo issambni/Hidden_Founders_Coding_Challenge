@@ -33,7 +33,6 @@ dependencies {
     compile("org.springframework.boot:spring-boot-devtools")
     compile('org.springframework.data:spring-data-mongodb')
     compile('com.fasterxml.jackson.datatype:jackson-datatype-joda')
-    compile('commons-io:commons-io')
 	compile('com.googlecode.json-simple:json-simple:1.1')
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('org.springframework.security:spring-security-test')

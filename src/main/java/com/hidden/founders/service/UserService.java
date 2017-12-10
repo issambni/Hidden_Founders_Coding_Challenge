@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.hidden.founders.model.User;
+import com.hidden.founders.model.UserAccount;
 import com.hidden.founders.repository.IUserRepository;
 
 @Service
@@ -20,7 +20,7 @@ public class UserService implements IUserService {
 		 */
 		
 		@Override
-		public List<User> findAll() {
+		public List<UserAccount> findAll() {
 			return userRepository.findAll();
 		}
 		
@@ -32,7 +32,7 @@ public class UserService implements IUserService {
 		 */
 
 		@Override
-		public User getOneById(String userId) {
+		public UserAccount getOneById(String userId) {
 			return userRepository.findOne(userId);
 		}
 		
@@ -44,7 +44,7 @@ public class UserService implements IUserService {
 		 */
 		
 		@Override
-		public User createUser(User user) {
+		public UserAccount createUser(UserAccount user) {
 			return userRepository.save(user);
 		}
 
