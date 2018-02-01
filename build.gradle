@@ -19,14 +19,9 @@ apply plugin: 'war'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-jar {
+war {
     baseName = rootProject.name
     version =  project.version
-}
-
-war {
-    baseName = 'myapp'
-    version =  '0.5.0'
 }
 
 repositories {
