@@ -45,12 +45,6 @@ public class IUserServiceTest {
 		assertThat(found.get(0).getEmail().equals("example@email.com"));
 	}
 	
-	@Test
-	public void fail_whenNameIsNotFound()
-	{
-		List<UserAccount> found= userService.findAll();
-		System.out.println("hello: "+found.get(0).getEmail());
-		assertTrue(found.get(0).getEmail().equals("example2@email.com"));
-	}
+	
 
 }
