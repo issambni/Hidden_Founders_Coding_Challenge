@@ -1,6 +1,8 @@
 package com.hidden.founders;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
@@ -47,7 +49,8 @@ public class IUserServiceTest {
 	public void fail_whenNameIsNotFound()
 	{
 		List<UserAccount> found= userService.findAll();
-		assertThat(found.get(0).getEmail().equals("example2@email.com"));
+		System.out.println("hello: "+found.get(0).getEmail());
+		assertTrue(found.get(0).getEmail().equals("example2@email.com"));
 	}
 
 }
