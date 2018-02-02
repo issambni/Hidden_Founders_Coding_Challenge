@@ -42,5 +42,12 @@ public class IUserServiceTest {
 		List<UserAccount> found= userService.findAll();
 		assertThat(found.get(0).getEmail().equals("example@email.com"));
 	}
+	
+	@Test
+	public void fail_whenNameIsNotFound()
+	{
+		List<UserAccount> found= userService.findAll();
+		assertThat(found.get(0).getEmail().equals("example2@email.com"));
+	}
 
 }
