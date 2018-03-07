@@ -158,7 +158,6 @@ import com.hidden.founders.repository.IShopRepository;
 		@Override
 		public List<Shop> removeInValidDislikedShopsByUserIds(String idUser){
 			List<Shop> shops=findInValidDislikedShopByUserIds(idUser);
-			System.out.println("shops: "+shops.toString());
 		 	for (Shop item : shops) {
 		 		Iterator<UserDislike> iterator = item.getDislikedByUserIds().iterator();
 			 		while(iterator.hasNext()){
